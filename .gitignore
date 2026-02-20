@@ -1,0 +1,7 @@
+node_modules
+**/node_modules
+**/dist
+backend/cricinfo.db
+
+backend/*.db-*
+frontend/*.tsbuildinfo
