@@ -1,0 +1,12 @@
+:root { color-scheme: light dark; font-family: Inter, system-ui, sans-serif; }
+body { margin: 0; }
+.layout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 12px; }
+.panel { border: 1px solid #7774; border-radius: 8px; padding: 12px; background: #1111; }
+.grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; align-content: start; }
+.full { grid-column: 1 / -1; overflow: auto; }
+button, input, textarea { padding: 8px; border-radius: 6px; border: 1px solid #7775; }
+table { width: 100%; border-collapse: collapse; }
+th,td { border-bottom: 1px solid #7774; padding: 6px; text-align: left; }
+.modal-wrap { position: fixed; inset: 0; background: #0008; display: grid; place-items: center; }
+.modal { background: #222; padding: 12px; border-radius: 8px; display: grid; gap: 8px; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }

@@ -1,0 +1,12 @@
+{
+  "name": "cricinfo-app",
+  "private": true,
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "build": "npm run -w backend build && npm run -w frontend build",
+    "dev": "concurrently \"npm run -w backend dev\" \"npm run -w frontend dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
