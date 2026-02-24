@@ -1,0 +1,10 @@
+.grid {
+  grid-template-columns: repeat(5, minmax(60px, 1fr));
+  gap: 8px;
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+  }
+}
+.timeline-over { margin-bottom: 8px; }

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Cric Scorer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-3">
+    <h1 class="h3 mb-3">Personal Cricket Scorer</h1>
+
+    <section id="setupCard" class="card mb-3">
+      <div class="card-header">Match Setup</div>
+      <div class="card-body">
+        <div class="row g-2">
+          <div class="col-md-4"><input id="title" class="form-control" placeholder="Match title"></div>
+          <div class="col-md-3"><input id="venue" class="form-control" placeholder="Venue"></div>
+          <div class="col-md-2"><input id="overs" type="number" class="form-control" value="20"></div>
+        </div>
+        <hr>
+        <div class="row g-2">
+          <div class="col-md-6">
+            <input id="teamAName" class="form-control mb-2" placeholder="Team A name">
+            <textarea id="teamAPlayers" class="form-control" rows="6" placeholder="Team A XI, one per line"></textarea>
+          </div>
+          <div class="col-md-6">
+            <input id="teamBName" class="form-control mb-2" placeholder="Team B name">
+            <textarea id="teamBPlayers" class="form-control" rows="6" placeholder="Team B XI, one per line"></textarea>
+          </div>
+        </div>
+        <button id="createMatch" class="btn btn-primary mt-3">Create Match</button>
+      </div>
+    </section>
+
+    <section id="liveWrap" class="d-none">
+      <div class="card mb-3">
+        <div class="card-body d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div>
+            <div id="matchTitle" class="fw-bold"></div>
+            <div id="scoreLine" class="fs-4"></div>
+          </div>
+          <button id="undoBtn" class="btn btn-warning">Undo</button>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <div class="card mb-3">
+            <div class="card-header">Scoring Grid</div>
+            <div class="card-body">
+              <div id="controls" class="d-grid grid"></div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-header">Batting Scorecard</div>
+            <div class="table-responsive"><table class="table table-sm mb-0" id="battingTable"></table></div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-header">Over Timeline</div>
+            <div class="card-body" id="timeline"></div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-header">Bowling Scorecard</div>
+            <div class="table-responsive"><table class="table table-sm mb-0" id="bowlingTable"></table></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card mb-3">
+            <div class="card-header">Ball Event</div>
+            <div class="card-body">
+              <label class="form-label">Runs off bat</label>
+              <input id="runsOffBat" type="number" min="0" class="form-control mb-2" value="0">
+              <label class="form-label">Extra type</label>
+              <select id="extraType" class="form-select mb-2">
+                <option value="none">None</option><option value="wd">Wide</option><option value="nb">No ball</option><option value="b">Byes</option><option value="lb">Leg byes</option>
+              </select>
+              <label class="form-label">Extra runs</label>
+              <input id="extraRuns" type="number" min="0" class="form-control mb-2" value="0">
+              <div class="form-check mb-2"><input class="form-check-input" id="isWicket" type="checkbox"><label class="form-check-label" for="isWicket">Wicket</label></div>
+              <select id="wicketType" class="form-select mb-2">
+                <option>Bowled</option><option>Caught</option><option>LBW</option><option>Run Out</option><option>Hit Wicket</option><option>Stumped</option>
+              </select>
+              <button id="submitBall" class="btn btn-success w-100">Record Ball</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
